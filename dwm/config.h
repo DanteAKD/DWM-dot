@@ -87,7 +87,7 @@ static const char *restart[] 	= { "sudo restart now", NULL};
 static const char *brightup[]   = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *code[]    	= { "code --disable-gpu --no-sandbox", NULL};
-static const char *monitor[]	= { "kitty -e htop", NULL};
+static const char *monitor[]	= { "st -e htop", NULL};
 #include "X11/XF86keysym.h"
 #include "movestack.c"
 static const Key keys[] = {
@@ -103,18 +103,18 @@ static const Key keys[] = {
 
 	//Spawn Keys
 	
-	{ MODKEY,                       XK_r,                  spawn,          SHCMD("~/.config/hypr/Scripts/menu.sh") },         // open app launcher MOD+r
+	{ MODKEY,                       XK_r,                  spawn,          SHCMD("rofi -show drun") },                                 // open app launcher MOD+r
 	{ MODKEY,                       XK_Return,             spawn,          {.v = termcmd } },                                 // spawn terminal MOD+return
 	
-	{ MODKEY,                       XK_period,             spawn,          SHCMD("~/.config/hypr/Scripts/RofiEmoji.sh") },                                 // spawn emoji selector
+	//{ MODKEY,                       XK_period,             spawn,          SHCMD("~/.config/hypr/Scripts/RofiEmoji.sh") },                                 // spawn emoji selector
 	{ MODKEY,                       XK_v,                  spawn,          SHCMD("clipmenu") },                                 // spawn clipboard
 	
 	//Apps
 		
-	{ MODKEY,			XK_p,		       spawn,	       {.v = monitor} },				  // sys monitor
-	{ MODKEY|ShiftMask,             XK_f,                  spawn,          SHCMD("exec zen-browser-optimized") },
+	{ MODKEY,			XK_p,		       spawn,	       SHCMD("exec st -e htop")},				  // sys monitor
+	{ MODKEY|ShiftMask,             XK_f,                  spawn,          SHCMD("exec zen-browser") },
 	{ MODKEY|ShiftMask,             XK_s,                  spawn,          SHCMD("exec flameshot gui") },                     // screenshot MOD+Shift+S
-	{ MODKEY,                       XK_t,                  spawn,          SHCMD("exec kitty -e ranger") },                   // open file manager (Thunar) MOD+t
+	{ MODKEY,                       XK_t,                  spawn,          SHCMD("exec st -e ranger") },                      // open file manager (Ranger) MOD+t
 	{ MODKEY,			XK_s,		       spawn,	       SHCMD("exec lollypop") },			  // music
 	{ MODKEY,  			XK_c,		       spawn,	       {.v = code }},					  //vscode
 	{ MODKEY,                       XK_b,                  togglebar,      {0} },                                             // show hide bar MOD+b

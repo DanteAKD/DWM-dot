@@ -101,8 +101,11 @@ static const struct arg args[] = {
 	  
 	  //{ keymap,		    "^c#ffffff^ %s^d^ ",	    NULL },
 	  { wifi_essid,		    "%s:",			   "wlo1"},
+	  
 	  { downspeed, 		    " %s ",   		   "wlo1" },
-	  { run_command,	    "∢:%s%% ",	            "~/scripts/volume.sh"},
+	  
+	  { run_command, "[V]:%s ", "amixer sget Master | tail -1 | awk '{print $5 }' | sed 's@\\(\\[\\|\\]\\)@@g'" },
+	  //{ vol_perc,	    "∢:%s%% ",	            NULL},
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT0" },
     // { battery_perc,   "^c#f43f5e^ %s%%^d^",         "BAT1" },
     // { battery_state,  "^c#f43f5e^%s^d^ ",           "BAT1" },
