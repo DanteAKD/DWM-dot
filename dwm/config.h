@@ -86,7 +86,7 @@ static const char *shutdown[]	= { "shutdown now", NULL};
 static const char *restart[] 	= { "sudo restart now", NULL};
 static const char *brightup[]   = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "10%-", NULL };
-static const char *code[]    	= { "code --disable-gpu --no-sandbox", NULL};
+static const char *code[]    	= { "code", NULL};
 static const char *monitor[]	= { "st -e htop", NULL};
 #include "X11/XF86keysym.h"
 #include "movestack.c"
@@ -106,7 +106,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,                  spawn,          SHCMD("rofi -show drun") },                                 // open app launcher MOD+r
 	{ MODKEY,                       XK_Return,             spawn,          {.v = termcmd } },                                 // spawn terminal MOD+return
 	
-	//{ MODKEY,                       XK_period,             spawn,          SHCMD("~/.config/hypr/Scripts/RofiEmoji.sh") },                                 // spawn emoji selector
+	{ MODKEY,                       XK_period,             spawn,          SHCMD("rofimoji") },                                 // spawn emoji selector
 	{ MODKEY,                       XK_v,                  spawn,          SHCMD("clipmenu") },                                 // spawn clipboard
 	
 	//Apps
@@ -176,7 +176,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask, 		XK_7, 			tag, 	       {.ui = 1 << 6} },
 	{ MODKEY|ShiftMask, 		XK_8, 			tag, 	       {.ui = 1 << 7} },
 	{ MODKEY|ShiftMask, 		XK_9, 			tag, 	       {.ui = 1 << 8} },
-	{ MODKEY,                       XK_BackSpace,          quit,           {0} },                                             // quit dwm MOD+backspace
+	
+	{ MODKEY,                       XK_BackSpace,          spawn,           SHCMD("exec ~/DWM-dot/scripts/logout.sh") },                                             // quit dwm MOD+backspace
+	//{ MODKEY,                       XK_BackSpace,          quit,           {0} },                                             // quit dwm MOD+backspace
 };
 
 

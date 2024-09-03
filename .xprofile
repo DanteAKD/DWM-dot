@@ -3,3 +3,4 @@ feh --bg-scale /home/irisu/wall_1.png
 slstatus &
 clipmenud &
 easyeffects &
+picom --animations -b

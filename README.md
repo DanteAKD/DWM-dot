@@ -1,2 +1,2 @@
-Install dependencies: ueberzugpp, clipmenu, picom-ftlabs-git, zen-browser, ranger, flameshot, ly, lollypop, visual-studio-code-bin, fcitx5 flatpak, thunar, mpv, ani-cli, obs, sof-firmware.
+Install dependencies: ueberzugpp, clipmenu, picom-ftlabs-git, zen-browser, ranger, flameshot, ly, lollypop, visual-studio-code-bin, fcitx5, fcitx5-unikey, fcitx5-im,gst-plugins-good,-bad,-base,-ugly, thunar, mpv, ani-cli, obs, sof-firmware, rofimoji, xorg-xinit, pipewire, pipewire-alsa, wireplumber, brightnessctl, feh, rofi.
 Fonts: Awesome font, jetbrains mono, noto-fonts-cjk.
