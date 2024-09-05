@@ -168,15 +168,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                                    6)
 	TAGKEYS(                        XK_8,                                    7)
 	TAGKEYS(                        XK_9,                                    8)
-	{ MODKEY|ShiftMask, 		XK_1, 			tag, 	       {.ui = 1 << 0} },
-	{ MODKEY|ShiftMask, 		XK_2, 			tag, 	       {.ui = 1 << 1} },
-	{ MODKEY|ShiftMask, 		XK_3, 			tag, 	       {.ui = 1 << 2} },
-	{ MODKEY|ShiftMask, 		XK_4, 			tag, 	       {.ui = 1 << 3} },
-	{ MODKEY|ShiftMask, 		XK_5, 			tag, 	       {.ui = 1 << 4} },
-	{ MODKEY|ShiftMask, 		XK_6, 			tag, 	       {.ui = 1 << 5} },
-	{ MODKEY|ShiftMask, 		XK_7, 			tag, 	       {.ui = 1 << 6} },
-	{ MODKEY|ShiftMask, 		XK_8, 			tag, 	       {.ui = 1 << 7} },
-	{ MODKEY|ShiftMask, 		XK_9, 			tag, 	       {.ui = 1 << 8} },
 	
 	{ MODKEY,                       XK_BackSpace,          spawn,           SHCMD("exec ~/DWM-dot/scripts/logout.sh") },                                             // quit dwm MOD+backspace
 	//{ MODKEY,                       XK_BackSpace,          quit,           {0} },                                             // quit dwm MOD+backspace
