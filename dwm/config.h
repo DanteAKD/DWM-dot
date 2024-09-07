@@ -83,7 +83,7 @@ static const char *upvol[]      = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AU
 static const char *downvol[] 	= { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL };
 static const char *mutevol[] 	= { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *shutdown[]	= { "shutdown now", NULL};
-static const char *restart[] 	= { "reboot now", NULL};
+static const char *restart[] 	= { "/sbin/reboot", NULL};
 static const char *brightup[]   = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightdown[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *code[]    	= { "code", NULL};
@@ -93,14 +93,17 @@ static const char *monitor[]	= { "st -e htop", NULL};
 static const Key keys[] = {
 	/* modifier                     key                    function        argument */
 	//XF86Keys
-	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0, XF86XK_AudioMute,        spawn, {.v = mutevol } },
-	//{ 0, XF86XK_Launch3,	      spawn, {.v = restart } },
-	{ MODKEY, XF86XK_PowerOff,	      spawn, {.v = restart} },	
-	{ 0, XF86XK_PowerOff,	      spawn, {.v = shutdown} },	
-	{ 0, XF86XK_MonBrightnessDown,spawn, {.v = brightdown} },
-	{ 0, XF86XK_MonBrightnessUp,  spawn, {.v = brightup  } },
+	
+	
+	{ MODKEY,                       XK_r,                  spawn,          SHCMD("rofi -show drun") },                                 // open app launcher MOD+r
+	{ 0,                          XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
+	{ 0,                          XF86XK_AudioLowerVolume, spawn, 	       {.v = downvol } },
+	{ 0, 			      XF86XK_AudioMute,        spawn, 	       {.v = mutevol } },
+	//{ MODKEY|ShiftMask, 	      XK_BackSpace,	       spawn, 	       {.v = restart} },	
+	{ 0,   	                      XF86XK_Launch3,	       spawn, 	       {.v = restart} },	
+	{ 0, 			      XF86XK_PowerOff,	       spawn, 	       {.v = shutdown} },	
+	{ 0, 		              XF86XK_MonBrightnessDown,spawn, 	       {.v = brightdown} },
+	{ 0, 			      XF86XK_MonBrightnessUp,  spawn, 	       {.v = brightup  } },
 
 	//Spawn Keys
 	
