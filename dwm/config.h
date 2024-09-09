@@ -11,8 +11,8 @@ static const unsigned int gappov    = 30;        // vert outer gap between windo
 static       int smartgaps          = 0;        // 1 means no outer gap when there is only one window
 static const int showbar            = 1;        // 0 means no bar
 static const int topbar             = 1;        // 0 means bottom bar
-static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=12:style=Bold", "monospace:size=12" };
-static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=12:style=Bold";
+static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=8:style=Bold", "monospace:size=8" };
+static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=8:style=Bold";
 #include "themes/mhtheme.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -174,7 +174,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                                    7)
 	TAGKEYS(                        XK_9,                                    8)
 	
-	{ MODKEY,                       XK_BackSpace,          spawn,           SHCMD("exec ~/DWM-dot/scripts/logout.sh") },                                             // quit dwm MOD+backspace
+	{ MODKEY,                       XK_BackSpace,          spawn,           SHCMD("pkill dwm") },                                             // quit dwm MOD+backspace
+	//{ MODKEY,                       XK_BackSpace,          spawn,           SHCMD("exec ~/DWM-dot/scripts/logout.sh") },                                             // quit dwm MOD+backspace
 	//{ MODKEY,                       XK_BackSpace,          quit,           {0} },                                             // quit dwm MOD+backspace
 };
 

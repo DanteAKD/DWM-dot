@@ -1,6 +1,8 @@
 // clang-format off
 /* See LICENSE file for copyright and license details. */
 
+
+
 /* interval between updates (in ms) */
 const unsigned int interval = 80;
 
@@ -91,6 +93,10 @@ const char *downspeed(const char *iface) {
 
     return buf;
 }
+
+static const char *font[] = {
+	"monospace:size=8"
+};
 static const struct arg args[] = {
     // uses https://dwm.suckless.org/patches/status2d patch ^c#[HEX]^ to set color and ^d^ to reset color
 
