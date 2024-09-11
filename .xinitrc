@@ -52,9 +52,11 @@ feh --bg-scale /home/irisu/Pictures/Colourful/wall_1.png &
 slstatus &
 clipmenud &
 easyeffects &
+fcitx5 &
 picom --animations -b &
 dunst &
 xset -dpms &
 set xset off &
 xrandr --output DP-2 --mode 1920x1080 --rate 144 &
+xrandr --dpi 100
 exec dwm

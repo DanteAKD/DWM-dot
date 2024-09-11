@@ -11,8 +11,8 @@ static const unsigned int gappov    = 30;        // vert outer gap between windo
 static       int smartgaps          = 0;        // 1 means no outer gap when there is only one window
 static const int showbar            = 1;        // 0 means no bar
 static const int topbar             = 1;        // 0 means bottom bar
-static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=8:style=Bold", "monospace:size=8" };
-static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=8:style=Bold";
+static const char *fonts[]          = { "Jetbrains Mono NerdFont:size=9:style=Bold", "monospace:size=9" };
+static const char dmenufont[]       = "Jetbrains Mono NerdFont:size=10:style=Bold";
 #include "themes/mhtheme.h"
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -120,7 +120,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_p,		       spawn,	       SHCMD("exec st -e htop")},				  // sys monitor
 	{ MODKEY|ShiftMask,             XK_f,                  spawn,          SHCMD("exec zen-browser") },
 	{ MODKEY|ShiftMask,             XK_s,                  spawn,          SHCMD("exec flameshot gui") },                     // screenshot MOD+Shift+S
-	{ MODKEY,                       XK_t,                  spawn,          SHCMD("exec st -e ranger") },                      // open file manager (Ranger) MOD+t
+	{ MODKEY,                       XK_t,                  spawn,          SHCMD("exec nautilus --new-window") },                      // open file manager (Nautilus) MOD+t
 	{ MODKEY,			XK_s,		       spawn,	       SHCMD("exec lollypop") },			  // music
 	{ MODKEY,  			XK_c,		       spawn,	       {.v = code }},					  //vscode
 	{ MODKEY,                       XK_b,                  togglebar,      {0} },                                             // show hide bar MOD+b

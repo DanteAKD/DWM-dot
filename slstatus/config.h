@@ -93,10 +93,6 @@ const char *downspeed(const char *iface) {
 
     return buf;
 }
-
-static const char *font[] = {
-	"monospace:size=8"
-};
 static const struct arg args[] = {
     // uses https://dwm.suckless.org/patches/status2d patch ^c#[HEX]^ to set color and ^d^ to reset color
 
