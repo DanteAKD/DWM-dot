@@ -122,7 +122,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_s,                  spawn,          SHCMD("flameshot gui") },                     // screenshot MOD+Shift+S
 	{ MODKEY,                       XK_t,                  spawn,          SHCMD("st -e ranger") },                      // open file manager (Nautilus) MOD+t
 	//{ MODKEY,                       XK_t,                  spawn,          SHCMD("nautilus --new-window") },                      // open file manager (Nautilus) MOD+t
-	{ ALTKEY,			XK_s,		       spawn,	       SHCMD("lollypop") },			  // music
+	//{ ALTKEY,			XK_s,		       spawn,	       SHCMD("lollypop") },			  // music
+	{ ALTKEY,			XK_s,		       spawn,	       SHCMD("st -e cmus") },			  // music
 	{ MODKEY,  			XK_c,		       spawn,	       {.v = code }},					  //vscode
 	{ MODKEY,                       XK_b,                  togglebar,      {0} },                                             // show hide bar MOD+b
 	{ MODKEY,                       XK_l,                  spawn,          SHCMD("slock") },                             // lockscreen MOD+L

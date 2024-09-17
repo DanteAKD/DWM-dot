@@ -1,0 +1,28 @@
+pl-create FAV
+add ~/Music
+clear
+c
+pl-create Chill
+pl-create Fav
+set confirm_run=false
+set mouse=true
+set repeat=tru
+set repeat=true
+delete -s
+pl-create ChillFav
+pl-delete RealChill.m3u
+pl-delete
+remove
+pl-import ~/Music/Lollypop/RealChill.m3u
+bind common <key> pl-import
+add ~/Music/Lollypop
+delete
+set repeat_current=true
+set repeat_current=false
+set replaygain=true
+set continue=true
+n
+next
+select
+q
+save
