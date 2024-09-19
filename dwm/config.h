@@ -49,8 +49,8 @@ static const Layout layouts[] = {
 	{ "IRISU",    tile },    /* first entry is default */
 	{ "[M]",      monocle },	//2
 	{ "[@]",      spiral },		//3
-	{ "[\\]",     dwindle },	//4
-	{ "H[]",      deck },		//5
+	{ "[\\]",     deck },	//4
+	{ "H[]",      dwindle },		//5
 	{ "TTT",      bstack },		//6
 	{ "===",      bstackhoriz },	//7
 	{ "HHH",      grid },		//8
@@ -79,10 +79,10 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "dmenu_run", "-c", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accnt, "-sf", col_gray4, NULL };
 static const char *termcmd[]    = { "st", NULL };
-static const char *upvol[] = { "sh", "-c", "/home/irisu/DWM-dot/scripts/volume.sh up", NULL };
-static const char *downvol[] = { "sh", "-c", "/home/irisu/DWM-dot/scripts/volume.sh down", NULL };
-//static const char *upvol[]      = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%+", NULL };
-//static const char *downvol[] 	= { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL };
+//static const char *upvol[] = { "sh", "-c", "/home/irisu/DWM-dot/scripts/volume.sh up", NULL };
+//static const char *downvol[] = { "sh", "-c", "/home/irisu/DWM-dot/scripts/volume.sh down", NULL };
+static const char *upvol[]      = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%+", NULL };
+static const char *downvol[] 	= { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL };
 static const char *mutevol[] 	= { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
 static const char *shutdown[]	= { "shutdown now", NULL};
 static const char *restart[] 	= { "/sbin/reboot", NULL};
@@ -118,10 +118,11 @@ static const Key keys[] = {
 	//Apps
 		
 	{ MODKEY,			XK_p,		       spawn,	       SHCMD("st -e htop")},				  // sys monitor
-	{ MODKEY|ShiftMask,             XK_f,                  spawn,          SHCMD("zen-browser") },
+	{ ALTKEY,             XK_f,                  spawn,          SHCMD("zen-browser") },
 	{ MODKEY|ShiftMask,             XK_s,                  spawn,          SHCMD("flameshot gui") },                     // screenshot MOD+Shift+S
-	{ MODKEY,                       XK_t,                  spawn,          SHCMD("nautilus --new-window") },                      // open file manager (Nautilus) MOD+t
-	{ MODKEY,			XK_s,		       spawn,	       SHCMD("lollypop") },			  // music
+	{ MODKEY,                       XK_t,                  spawn,          SHCMD("st -e ranger") },                      // open file manager (Nautilus) MOD+t
+	//{ MODKEY,                       XK_t,                  spawn,          SHCMD("nautilus --new-window") },                      // open file manager (Nautilus) MOD+t
+	{ ALTKEY,			XK_s,		       spawn,	       SHCMD("lollypop") },			  // music
 	{ MODKEY,  			XK_c,		       spawn,	       {.v = code }},					  //vscode
 	{ MODKEY,                       XK_b,                  togglebar,      {0} },                                             // show hide bar MOD+b
 	{ MODKEY,                       XK_l,                  spawn,          SHCMD("slock") },                             // lockscreen MOD+L
@@ -149,12 +150,12 @@ static const Key keys[] = {
         { MODKEY,                       XK_f,                  togglefullscr,  {0} },                                             // toggle actualfullscreen MOD+f
 	{ MODKEY,             XK_w,                  unfloatvisible, {.v = &layouts[0]} },                              // make floating window tiled MOD+Z
 	{ MODKEY|ALTKEY,                XK_1,                  setlayout,      {.v = &layouts[0]} },                              // change layout to tile MOD+ALT+1
-	{ MODKEY|ALTKEY,                XK_2,                  setlayout,      {.v = &layouts[13]} },                             // change layout to float MOD+ALT+2
-	{ MODKEY|ALTKEY,                XK_3,                  setlayout,      {.v = &layouts[1]} },                              // change layout to monocle MOD+ALT+3
-	{ MODKEY|ALTKEY,                XK_4,                  setlayout,      {.v = &layouts[11]} },                             // change layout to centeredmaster MOD+ALT+4
+	{ MODKEY|ALTKEY,                XK_2,                  setlayout,      {.v = &layouts[11]} },                             // change layout to float MOD+ALT+2
+	{ MODKEY|ALTKEY,                XK_3,                  setlayout,      {.v = &layouts[5]} },                              // change layout to monocle MOD+ALT+3
+	{ MODKEY|ALTKEY,                XK_4,                  setlayout,      {.v = &layouts[7]} },                             // change layout to centeredmaster MOD+ALT+4
 	{ MODKEY|ALTKEY,                XK_5,                  setlayout,      {.v = &layouts[5]} },                              // change layout to bstac MOD+ALT+5
 	{ MODKEY|ALTKEY,                XK_6,                  setlayout,      {.v = &layouts[7]} },                              // change layout to grid MOD+ALT+6
-	{ MODKEY|ALTKEY,                XK_7,                  setlayout,      {.v = &layouts[2]} },                              // change layout to spiral MOD+ALT+7
+	{ MODKEY|ALTKEY,                XK_7,                  setlayout,      {.v = &layouts[4]} },                              // change layout to spiral MOD+ALT+7
 	{ MODKEY,                       XK_0,                  view,           {.ui = ~0 } },                                     // view all windows MOD+0
 	{ MODKEY|ShiftMask,             XK_0,                  tag,            {.ui = ~0 } },                                     // make window on all tags MOD+SHIFT+0
 	{ MODKEY,                       XK_comma,              focusmon,       {.i = -1 } },                                      // move window to monitor MOD+,
