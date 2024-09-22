@@ -93,6 +93,20 @@ const char *downspeed(const char *iface) {
 
     return buf;
 }
+static const char *brightness_perc(const char *unused)
+{
+    static char perc[4];
+    FILE *fp = popen("~/DWM-dot/scripts/brightness.sh", "r");
+    if (fp == NULL) {
+        warn("popen 'brightness.sh'");
+        return NULL;
+    }
+    fscanf(fp, "%3s", perc);
+    pclose(fp);
+    return perc;
+}
+
+
 static const struct arg args[] = {
     // uses https://dwm.suckless.org/patches/status2d patch ^c#[HEX]^ to set color and ^d^ to reset color
 
@@ -102,6 +116,7 @@ static const struct arg args[] = {
 	  { ram_used,               "^c#ffffff^󰫗 %s%%^d^ ",	    NULL },
 	  
 	  //{ keymap,		    "^c#ffffff^ %s^d^ ",	    NULL },
+	  { brightness_perc, ":%s%% ", NULL }, 
 	  { wifi_essid,		    "%s:",			   "wlo1"},
 	  
 	  { downspeed, 		    " %s ",   		   "wlo1" },
