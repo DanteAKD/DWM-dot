@@ -59,4 +59,5 @@ xset -dpms &
 set xset off &
 xrandr --output DP-2 --mode 1920x1080 --rate 144 &
 xrandr --dpi 100
+brightnessctl set 100%+
 exec dwm
